@@ -7,21 +7,20 @@
     <label id="label2">Digite seu comentário: </label>
     <input type="text" class="input" placeholder="comentario" [(ngModel)]="tut">
   </div>
-  <div class="button">
-    <button (click)="post()">
-      Salvar
-    </button>
+  <div >
+    <button class="button-1" role="button" (click)="post()">Salvar</button>
   </div>
-</div>
 
-<div class="container">
     <div *ngFor="let vet of comments, let i = index">
       <div class="author" *ngIf= "i != 0">
-        {{vet.author}}
+        Autor: {{vet.author}}
       </div>
       <div class="comentario" *ngIf= "i != 0">
-        {{vet.comentario}}
+        Comentário: {{vet.comentario}}
       </div>
     </div>
+
 </div>
+
+
 <!--<textarea [(ngModel)]="comments"> comment works</textarea>-->

@@ -27,8 +27,12 @@ export class CommentComponent implements OnInit{
       let vet = this.comments[i];
     }
   }
+
   post()
   {
+    if((this.aut.length > 0) && (this.tut.length > 9))
+    {
+
     this.comments.push(
       {
       ...this.comments,
@@ -37,6 +41,13 @@ export class CommentComponent implements OnInit{
       comentario: this.tut
       }
     )
+    }else{
+      if (this.aut.length==0)
+      alert("O campo 'nome' está vazio");
+      else{
+        alert("O campo comentário precisa de ao menos 10 caracteres");
+      }
+    }
   }
 
 }
