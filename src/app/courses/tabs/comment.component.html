@@ -1,0 +1,27 @@
+<div class="principal">
+  <div class = "name">
+    <label id="label1">Digite seu nome: </label>
+    <input  type="text" class="input" placeholder="author" [(ngModel)]="aut">
+  </div>
+  <div>
+    <label id="label2">Digite seu comentário: </label>
+    <input type="text" class="input" placeholder="comentario" [(ngModel)]="tut">
+  </div>
+  <div class="button">
+    <button (click)="post()">
+      Salvar
+    </button>
+  </div>
+</div>
+
+<div class="container">
+    <div *ngFor="let vet of comments, let i = index">
+      <div class="author" *ngIf= "i != 0">
+        {{vet.author}}
+      </div>
+      <div class="comentario" *ngIf= "i != 0">
+        {{vet.comentario}}
+      </div>
+    </div>
+</div>
+<!--<textarea [(ngModel)]="comments"> comment works</textarea>-->
